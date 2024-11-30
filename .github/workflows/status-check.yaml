@@ -1,0 +1,17 @@
+name: Status Check Example
+
+on:
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  status-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set Status to "Running"
+        run: echo "Workflow is running!"
+
+      - name: Complete Status
+        run: echo "Workflow is completed successfully!"
